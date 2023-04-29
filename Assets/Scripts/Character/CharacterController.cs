@@ -12,6 +12,7 @@ namespace DENT
 		#region Fields
 		[SerializeField] private InputActionReference _movementInput;
 		[SerializeField] private InputActionReference _scanInput;
+		[SerializeField] private InputActionReference _switchRadar;
 		[SerializeField] private float _force = 10;
 		[SerializeField] private float _maxVelocity = 10;
 		[SerializeField] private float _decreaseSpeed = 10;
@@ -20,13 +21,17 @@ namespace DENT
 		[SerializeField] private Scanner _scanner = null;
 		[SerializeField] private float _cooldown = 5.0f;
 		private float _cooldownTimer = 0.0f;
-		[SerializeField] private bool _selectedDirectionalRadar = true;
+		private bool _selectedDirectionalRadar = true;
+		[SerializeField] private GameObject _directionnalFlag = null;
+		[SerializeField] private GameObject _circularFlag = null;
 		#endregion Fields
 
 		#region Methods
 		private void Start()
 		{
 			_rigidbody = GetComponent<Rigidbody>();
+			_circularFlag.gameObject.SetActive(false);
+			_directionnalFlag.gameObject.SetActive(true);
 		}
 
 		private void Update()
@@ -50,6 +55,20 @@ namespace DENT
 				_cooldownTimer = _cooldown;
 				//_scanner.PlaceRaycast(transform.position);
 				_scanner.SpawnRaycast(transform.position, _selectedDirectionalRadar);
+			}
+			if (_switchRadar.action.WasPressedThisFrame())
+			{
+				_selectedDirectionalRadar = !_selectedDirectionalRadar;
+				if (_selectedDirectionalRadar)
+				{
+					_circularFlag.gameObject.SetActive(false);
+					_directionnalFlag.gameObject.SetActive(true);
+				}
+				else
+				{
+					_directionnalFlag.gameObject.SetActive(false);
+					_circularFlag.gameObject.SetActive(true);
+				}
 			}
 		}
 

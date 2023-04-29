@@ -31,7 +31,7 @@ namespace DENT
 			}
 			if (directionnal)
 			{
-				_currentRadar = Instantiate(_directionnalPrefab, position + Vector3.up * 1.0f, transform.rotation);
+				_currentRadar = Instantiate(_directionnalPrefab, position + Vector3.up * 1.0f, transform.rotation * Quaternion.Euler(-90.0f,0.0f, -90.0f));
 				_currentRadar.AddComponent<ParticleCollider>().Scanner = this;
 			}
 			else
