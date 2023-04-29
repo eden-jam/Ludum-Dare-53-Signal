@@ -9,6 +9,8 @@ public class EnnemyAI : MonoBehaviour
     public Transform[] waypoints;
     int waypointIndex;
     Vector3 target;
+    bool followPlayer = false;
+
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -20,7 +22,10 @@ public class EnnemyAI : MonoBehaviour
     {
         if(Vector3.Distance(transform.position, target) < 1)
         {
-            IterateWaypointIndex();
+            if(followPlayer == false)
+            {
+                IterateWaypointIndex();
+            }
             UpdateDestination();
         }
     }
@@ -38,5 +43,12 @@ public class EnnemyAI : MonoBehaviour
         {
             waypointIndex = 0;
         }
+    }
+
+    public void IsScanned(Vector3 position)
+    {
+        target = position;
+        agent.SetDestination(target);
+        followPlayer = true;
     }
 }
