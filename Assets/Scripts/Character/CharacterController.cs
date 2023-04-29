@@ -26,7 +26,7 @@ namespace DENT
 		private void Update()
 		{
 			Vector2 vector = _movementInput.action.ReadValue<Vector2>();
-			_rigidbody.velocity = new Vector3(vector.x, 0.0f, vector.y) * _speed * Time.deltaTime;
+			_rigidbody.AddForce(new Vector3(vector.x, 0.0f, vector.y) * _speed);
 			_renderer.LookAt(transform.position + _rigidbody.velocity);
 			if (_scanInput.action.IsPressed())
 			{
