@@ -51,7 +51,7 @@ namespace DENT
 		
 		private void Win()
 		{
-			UnityEngine.Debug.Log("Win");
+			FindObjectOfType<GameManager>().Win();
 		}
 		#endregion Methods
 	}

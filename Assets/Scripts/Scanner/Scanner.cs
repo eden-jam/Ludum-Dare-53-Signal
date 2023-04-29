@@ -115,7 +115,7 @@ namespace DENT
 					emitParams.position += Vector3.up * 200.0f;
 					emitParams.startSize = 20.0f;
 					emitParams.startColor = Color.blue;
-					_fogRevealer.Emit(emitParams, 1);
+					_radarEmitter.Emit(emitParams, 1);
 					//UnityEngine.Debug.Log(hit.point);
 					UnityEngine.Debug.DrawLine(_currentRadar.transform.position, hitPoint, Color.black, 5.0f);
 					continue;

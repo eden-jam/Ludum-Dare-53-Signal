@@ -1,6 +1,5 @@
 namespace DENT
 {
-	using UnityEditor.ShaderGraph.Internal;
 	using UnityEngine;
 	using UnityEngine.InputSystem;
 
@@ -74,7 +73,15 @@ namespace DENT
 
 		private void OnTriggerEnter(Collider other)
 		{
-			Debug.Log("You are dead !");
+			if (other.CompareTag("Enemy"))
+			{
+				FindObjectOfType<GameManager>().Die();
+			}
+
+			if (other.CompareTag("Terrain"))
+			{
+				//FindObjectOfType<GameManager>().Die();
+			}
 		}
 		#endregion Methods
 	}

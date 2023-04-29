@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7897000909003584440}
   m_Layer: 0
   m_Name: Ennemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 7388711814046598761}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7388711812656849421
 BoxCollider:
