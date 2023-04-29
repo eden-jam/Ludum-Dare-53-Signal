@@ -47,6 +47,7 @@ namespace Eden.MV
 					{
 						ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
 						emitParams.position = hit.point;
+						emitParams.position += Vector3.up * 10.0f;
 						_fogRevealer.Emit(emitParams, 1);
 						UnityEngine.Debug.Log(hit.point);
 						UnityEngine.Debug.DrawLine(transform.position, hit.point, Color.blue, 5.0f);
