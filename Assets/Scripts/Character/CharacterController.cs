@@ -42,7 +42,8 @@ namespace DENT
 			_renderer.LookAt(transform.position + _rigidbody.velocity);
 			if (_scanInput.action.IsPressed())
 			{
-				_scanner.PlaceRaycast(transform.position);
+				//_scanner.PlaceRaycast(transform.position);
+				_scanner.SpawnRaycast(transform.position, false);
 			}
 		}
 

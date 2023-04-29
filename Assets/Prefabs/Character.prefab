@@ -5096,6 +5096,8 @@ MonoBehaviour:
   _speed: 0
   _fogRevealer: {fileID: 9170970865430682549}
   _radarEmitter: {fileID: 0}
+  _circlePrefab: {fileID: 2956868418407291349, guid: ec41434e495e45d48b87e31bcf78f53f, type: 3}
+  _directionnalPrefab: {fileID: 4239720994483104649, guid: 40ece5f97f8103f4cb245123d3b53ab3, type: 3}
 --- !u!1001 &9170970865382504126
 PrefabInstance:
   m_ObjectHideFlags: 0
