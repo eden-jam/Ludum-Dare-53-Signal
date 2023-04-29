@@ -1,6 +1,5 @@
-namespace Eden.MV
+namespace DENT
 {
-	using System.Collections;
 	using UnityEngine;
 
 	/// <summary>
@@ -18,21 +17,57 @@ namespace Eden.MV
 		#endregion Fields
 
 		#region Methods
-		private void Update()
+		public void PlaceRaycast(Vector3 position)
 		{
-			if(Input.GetKeyDown(KeyCode.Space))
+			position.y = transform.position.y;
+			for (int i = 0; i < _raycastCount; i++)
 			{
-				RaycastMap();
+				float angle = Mathf.PI * 2.0f * ((float)i / (float)_raycastCount);
+				Vector3 dir = new Vector3(Mathf.Cos(angle), 0.0f, Mathf.Sin(angle));
+				if (Physics.Raycast(position, dir, out RaycastHit hit, _radarDist))
+				{
+					EnnemyAI enemy = hit.rigidbody?.GetComponent<EnnemyAI>();
+					if (enemy != null)
+					{
+						// TODO_Hamza enemy.IsScanned(position);
+						ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
+						emitParams.position = hit.point;
+						emitParams.position += Vector3.up * 10.0f;
+						emitParams.startSize = 20.0f;
+						emitParams.startColor = Color.blue;
+						_fogRevealer.Emit(emitParams, 1);
+						UnityEngine.Debug.Log(hit.point);
+						UnityEngine.Debug.DrawLine(position, hit.point, Color.black, 5.0f);
+						return;
+					}
+
+					if (hit.distance < _fogDist)
+					{
+						ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
+						emitParams.position = hit.point;
+						emitParams.position += Vector3.up * 10.0f;
+						_fogRevealer.Emit(emitParams, 1);
+						UnityEngine.Debug.Log(hit.point);
+						UnityEngine.Debug.DrawLine(position, hit.point, Color.blue, 5.0f);
+					}
+					else
+					{
+						UnityEngine.Debug.Log(hit.point);
+						UnityEngine.Debug.DrawLine(position, hit.point, Color.green, 5.0f);
+					}
+
+					{
+						ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
+						emitParams.position = hit.point;
+						_radarEmitter.Emit(emitParams, 1);
+					}
+				}
+				else
+				{
+					UnityEngine.Debug.DrawRay(position, dir * _radarDist, Color.red, 5.0f);
+				}
 			}
 		}
-
-		//public IEnumerator LaunchRadar()
-		//{
-		//	for (int i = 0; i < _speed; i++)
-		//	{
-
-		//	}
-		//}
 
 		[ContextMenu("RaycastMap")]
 		public void RaycastMap()
