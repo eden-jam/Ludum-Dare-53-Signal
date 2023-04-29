@@ -5021,7 +5021,7 @@ Camera:
   far clip plane: 10000
   field of view: 5
   orthographic: 1
-  orthographic size: 75
+  orthographic size: 100
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5139,7 +5139,7 @@ MonoBehaviour:
   m_Follow: {fileID: 3252950945649445759}
   m_Lens:
     FieldOfView: 5
-    OrthographicSize: 75
+    OrthographicSize: 100
     NearClipPlane: 0.3
     FarClipPlane: 10000
     Dutch: 0
@@ -5231,12 +5231,20 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9170970866736556037, guid: b3978226c7dced4479710cb5fff50f3b, type: 3}
+      propertyPath: _force
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170970866736556037, guid: b3978226c7dced4479710cb5fff50f3b, type: 3}
       propertyPath: _maxVelocity
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9170970866736556037, guid: b3978226c7dced4479710cb5fff50f3b, type: 3}
       propertyPath: _decreaseSpeed
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170970866736556037, guid: b3978226c7dced4479710cb5fff50f3b, type: 3}
+      propertyPath: _selectedDirectionalRadar
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9170970866736556039, guid: b3978226c7dced4479710cb5fff50f3b, type: 3}
       propertyPath: m_RootOrder
@@ -5256,7 +5264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9170970866736556039, guid: b3978226c7dced4479710cb5fff50f3b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.6216325
       objectReference: {fileID: 0}
     - target: {fileID: 9170970866736556039, guid: b3978226c7dced4479710cb5fff50f3b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5264,7 +5272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9170970866736556039, guid: b3978226c7dced4479710cb5fff50f3b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.7833091
       objectReference: {fileID: 0}
     - target: {fileID: 9170970866736556039, guid: b3978226c7dced4479710cb5fff50f3b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -5276,7 +5284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9170970866736556039, guid: b3978226c7dced4479710cb5fff50f3b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 103.129
       objectReference: {fileID: 0}
     - target: {fileID: 9170970866736556039, guid: b3978226c7dced4479710cb5fff50f3b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -5290,6 +5298,10 @@ PrefabInstance:
       propertyPath: _radarEmitter
       value: 
       objectReference: {fileID: 3252950944022461934}
+    - target: {fileID: 9170970867193569888, guid: b3978226c7dced4479710cb5fff50f3b, type: 3}
+      propertyPath: _directionnalPrefab
+      value: 
+      objectReference: {fileID: 653188444747911191, guid: 40ece5f97f8103f4cb245123d3b53ab3, type: 3}
     - target: {fileID: 9170970867193569895, guid: b3978226c7dced4479710cb5fff50f3b, type: 3}
       propertyPath: m_Layer
       value: 7

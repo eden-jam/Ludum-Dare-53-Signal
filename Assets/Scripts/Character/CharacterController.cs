@@ -1,5 +1,6 @@
 namespace DENT
 {
+	using UnityEditor.ShaderGraph.Internal;
 	using UnityEngine;
 	using UnityEngine.InputSystem;
 
@@ -17,6 +18,9 @@ namespace DENT
 		private Rigidbody _rigidbody;
 		[SerializeField] private Transform _renderer = null;
 		[SerializeField] private Scanner _scanner = null;
+		[SerializeField] private float _cooldown = 5.0f;
+		private float _cooldownTimer = 0.0f;
+		[SerializeField] private bool _selectedDirectionalRadar = true;
 		#endregion Fields
 
 		#region Methods
@@ -27,6 +31,7 @@ namespace DENT
 
 		private void Update()
 		{
+			_cooldownTimer -= Time.deltaTime;
 			Vector2 vector = _movementInput.action.ReadValue<Vector2>();
 			if (vector != Vector2.zero)
 			{
@@ -40,10 +45,11 @@ namespace DENT
 			}
 
 			_renderer.LookAt(transform.position + _rigidbody.velocity);
-			if (_scanInput.action.IsPressed())
+			if (_scanInput.action.IsPressed() && _cooldownTimer <= 0.0f)
 			{
+				_cooldownTimer = _cooldown;
 				//_scanner.PlaceRaycast(transform.position);
-				_scanner.SpawnRaycast(transform.position, false);
+				_scanner.SpawnRaycast(transform.position, _selectedDirectionalRadar);
 			}
 		}
 
