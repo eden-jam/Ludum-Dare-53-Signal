@@ -38,7 +38,7 @@ namespace DENT
 						_fogRevealer.Emit(emitParams, 1);
 						UnityEngine.Debug.Log(hit.point);
 						UnityEngine.Debug.DrawLine(position, hit.point, Color.black, 5.0f);
-						return;
+						continue;
 					}
 
 					if (hit.distance < _fogDist)
