@@ -29,7 +29,7 @@ namespace DENT
 					EnnemyAI enemy = hit.rigidbody?.GetComponent<EnnemyAI>();
 					if (enemy != null)
 					{
-						// TODO_Hamza enemy.IsScanned(position);
+						enemy.IsScanned(position);
 						ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
 						emitParams.position = hit.point;
 						emitParams.position += Vector3.up * 10.0f;
