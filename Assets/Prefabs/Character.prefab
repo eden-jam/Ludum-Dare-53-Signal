@@ -4997,7 +4997,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementInput: {fileID: 9183551679836821735, guid: 958f363bebed81c43b9d21d22b41cad5, type: 3}
   _scanInput: {fileID: 3381279661549570422, guid: 958f363bebed81c43b9d21d22b41cad5, type: 3}
-  _speed: 10000
+  _force: 10
+  _maxVelocity: 25
+  _decreaseSpeed: 10
   _renderer: {fileID: 927951736702158430}
   _scanner: {fileID: 9170970867193569888}
 --- !u!114 &9170970866736556033
