@@ -29,6 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9170970865382370366}
+  - {fileID: 9170970867193569889}
   m_Father: {fileID: 9170970866736556039}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4962,7 +4963,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9170970865449924307}
-  - {fileID: 9170970867193569889}
   - {fileID: 927951736702158430}
   m_Father: {fileID: 0}
   m_RootOrder: -1
@@ -5002,6 +5002,8 @@ MonoBehaviour:
   _decreaseSpeed: 10
   _renderer: {fileID: 927951736702158430}
   _scanner: {fileID: 9170970867193569888}
+  _cooldown: 5
+  _selectedDirectionalRadar: 1
 --- !u!114 &9170970866736556033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5075,7 +5077,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9170970865430682550}
-  m_Father: {fileID: 9170970866736556039}
+  m_Father: {fileID: 927951736702158430}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9170970867193569888
