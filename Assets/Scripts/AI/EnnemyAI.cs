@@ -9,10 +9,12 @@ public class EnnemyAI : MonoBehaviour
     public Transform[] waypoints;
     int waypointIndex;
     Vector3 target;
+    bool followPlayer = false;
+
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        UpdateDestination();
+        UpdateDestination(waypoints[waypointIndex].position);
     }
 
     // Update is called once per frame
@@ -20,14 +22,23 @@ public class EnnemyAI : MonoBehaviour
     {
         if(Vector3.Distance(transform.position, target) < 1)
         {
-            IterateWaypointIndex();
-            UpdateDestination();
+            if(followPlayer == false)
+            {
+                IterateWaypointIndex();
+                UpdateDestination(waypoints[waypointIndex].position);
+            }
+            else
+            {
+                followPlayer = false;
+                UpdateDestination(waypoints[waypointIndex].position);
+            }
+            Debug.Log(target);
         }
     }
 
-    void UpdateDestination()
+    void UpdateDestination(Vector3 newTarget)
     {
-        target = waypoints[waypointIndex].position;
+        target = newTarget;
         agent.SetDestination(target);
     }
 
@@ -38,5 +49,12 @@ public class EnnemyAI : MonoBehaviour
         {
             waypointIndex = 0;
         }
+    }
+
+    public void IsScanned(Vector3 position)
+    {
+        position.y = 0;
+        UpdateDestination(position);
+        followPlayer = true;
     }
 }
