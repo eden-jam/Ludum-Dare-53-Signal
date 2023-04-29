@@ -4945,7 +4945,7 @@ GameObject:
   - component: {fileID: 3252950944715959378}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4997,13 +4997,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementInput: {fileID: 9183551679836821735, guid: 958f363bebed81c43b9d21d22b41cad5, type: 3}
   _scanInput: {fileID: 3381279661549570422, guid: 958f363bebed81c43b9d21d22b41cad5, type: 3}
+  _switchRadar: {fileID: 0}
   _force: 10
   _maxVelocity: 25
   _decreaseSpeed: 10
   _renderer: {fileID: 927951736702158430}
   _scanner: {fileID: 9170970867193569888}
   _cooldown: 5
-  _selectedDirectionalRadar: 1
+  _directionnalFlag: {fileID: 0}
+  _circularFlag: {fileID: 0}
 --- !u!114 &9170970866736556033
 MonoBehaviour:
   m_ObjectHideFlags: 0
