@@ -320,6 +320,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464125494}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1498735320 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6809908827445257510, guid: 51bff5ea2241134409d9d10c228816ca, type: 3}
+  m_PrefabInstance: {fileID: 3252950944715959372}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1668203924
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,6 +873,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3252950945175847192, guid: 51bff5ea2241134409d9d10c228816ca, type: 3}
+      propertyPath: _radarDist
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252950945649445757, guid: 51bff5ea2241134409d9d10c228816ca, type: 3}
+      propertyPath: _renderer
+      value: 
+      objectReference: {fileID: 1498735320}
     - target: {fileID: 8082594725111692780, guid: 51bff5ea2241134409d9d10c228816ca, type: 3}
       propertyPath: m_Name
       value: GameplayCharacter

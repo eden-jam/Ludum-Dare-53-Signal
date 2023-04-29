@@ -13,6 +13,7 @@ namespace DENT
 		[SerializeField] private InputActionReference _scanInput;
 		[SerializeField] private float _speed = 100;
 		private Rigidbody _rigidbody;
+		[SerializeField] private Transform _renderer = null;
 		[SerializeField] private Scanner _scanner = null;
 		#endregion Fields
 
@@ -26,6 +27,7 @@ namespace DENT
 		{
 			Vector2 vector = _movementInput.action.ReadValue<Vector2>();
 			_rigidbody.velocity = new Vector3(vector.x, 0.0f, vector.y) * _speed * Time.deltaTime;
+			_renderer.LookAt(transform.position + _rigidbody.velocity);
 			if (_scanInput.action.IsPressed())
 			{
 				_scanner.PlaceRaycast(transform.position);

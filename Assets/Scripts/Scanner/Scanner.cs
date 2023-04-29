@@ -36,7 +36,7 @@ namespace DENT
 						emitParams.startSize = 20.0f;
 						emitParams.startColor = Color.blue;
 						_fogRevealer.Emit(emitParams, 1);
-						UnityEngine.Debug.Log(hit.point);
+						//UnityEngine.Debug.Log(hit.point);
 						UnityEngine.Debug.DrawLine(position, hit.point, Color.black, 5.0f);
 						continue;
 					}
@@ -47,12 +47,12 @@ namespace DENT
 						emitParams.position = hit.point;
 						emitParams.position += Vector3.up * 10.0f;
 						_fogRevealer.Emit(emitParams, 1);
-						UnityEngine.Debug.Log(hit.point);
+						//UnityEngine.Debug.Log(hit.point);
 						UnityEngine.Debug.DrawLine(position, hit.point, Color.blue, 5.0f);
 					}
 					else
 					{
-						UnityEngine.Debug.Log(hit.point);
+						//UnityEngine.Debug.Log(hit.point);
 						UnityEngine.Debug.DrawLine(position, hit.point, Color.green, 5.0f);
 					}
 
@@ -84,12 +84,12 @@ namespace DENT
 						emitParams.position = hit.point;
 						emitParams.position += Vector3.up * 10.0f;
 						_fogRevealer.Emit(emitParams, 1);
-						UnityEngine.Debug.Log(hit.point);
+						//UnityEngine.Debug.Log(hit.point);
 						UnityEngine.Debug.DrawLine(transform.position, hit.point, Color.blue, 5.0f);
 					}
 					else
 					{
-						UnityEngine.Debug.Log(hit.point);
+						//UnityEngine.Debug.Log(hit.point);
 						UnityEngine.Debug.DrawLine(transform.position, hit.point, Color.green, 5.0f);
 					}
 
