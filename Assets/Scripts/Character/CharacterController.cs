@@ -45,6 +45,11 @@ namespace DENT
 				_scanner.PlaceRaycast(transform.position);
 			}
 		}
+
+		private void OnTriggerEnter(Collider other)
+		{
+			Debug.Log("You are dead !");
+		}
 		#endregion Methods
 	}
 }
