@@ -1,5 +1,6 @@
 namespace Eden.MV
 {
+	using System.Collections;
 	using UnityEngine;
 
 	/// <summary>
@@ -11,11 +12,28 @@ namespace Eden.MV
 		[SerializeField] private int _raycastCount;
 		[SerializeField] private int _radarDist;
 		[SerializeField] private int _fogDist;
+		[SerializeField] private float _speed;
 		[SerializeField] private ParticleSystem _fogRevealer = null;
 		[SerializeField] private ParticleSystem _radarEmitter = null;
 		#endregion Fields
 
 		#region Methods
+		private void Update()
+		{
+			if(Input.GetKeyDown(KeyCode.Space))
+			{
+				RaycastMap();
+			}
+		}
+
+		//public IEnumerator LaunchRadar()
+		//{
+		//	for (int i = 0; i < _speed; i++)
+		//	{
+
+		//	}
+		//}
+
 		[ContextMenu("RaycastMap")]
 		public void RaycastMap()
 		{
