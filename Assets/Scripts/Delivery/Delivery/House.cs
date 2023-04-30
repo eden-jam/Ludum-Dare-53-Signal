@@ -9,6 +9,7 @@ namespace DENT
 	{
 		#region Fields
 		[SerializeField] private ParticleSystem _houseEmitter = null;
+		[SerializeField] private ParticleSystem _revealEmitter = null;
 		[SerializeField] private GameObject _dialogue = null;
 		[SerializeField] private GameObject _root = null;
 		[SerializeField] private float _dialogDuration = 2.0f;
@@ -62,6 +63,7 @@ namespace DENT
 			if (_isActive)
 			{
 				_houseEmitter.Play();
+				_revealEmitter.Play();
 			}
 		}
 		#endregion Methods
