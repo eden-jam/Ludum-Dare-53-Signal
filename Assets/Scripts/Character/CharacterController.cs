@@ -23,6 +23,7 @@ namespace DENT
 		private bool _selectedDirectionalRadar = true;
 		[SerializeField] private GameObject _directionnalFlag = null;
 		[SerializeField] private GameObject _circularFlag = null;
+		[SerializeField] private bool _killOnTouch = true;
 		#endregion Fields
 
 		#region Methods
@@ -78,9 +79,9 @@ namespace DENT
 				FindObjectOfType<GameManager>().Die();
 			}
 
-			if (other.CompareTag("Terrain"))
+			if (other.CompareTag("Terrain") && _killOnTouch)
 			{
-				//FindObjectOfType<GameManager>().Die();
+				FindObjectOfType<GameManager>().Die();
 			}
 		}
 		#endregion Methods
