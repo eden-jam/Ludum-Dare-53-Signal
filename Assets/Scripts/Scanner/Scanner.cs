@@ -31,12 +31,12 @@ namespace DENT
 			}
 			if (directionnal)
 			{
-				_currentRadar = Instantiate(_directionnalPrefab, position + Vector3.up * 1.0f, transform.rotation * Quaternion.Euler(-90.0f,0.0f, -90.0f));
+				_currentRadar = Instantiate(_directionnalPrefab, position + Vector3.up * 2.0f, transform.rotation * Quaternion.Euler(-90.0f,0.0f, -90.0f));
 				_currentRadar.AddComponent<ParticleCollider>().Scanner = this;
 			}
 			else
 			{
-				_currentRadar = Instantiate(_circlePrefab, position + Vector3.up * 1.0f, _circlePrefab.transform.rotation);
+				_currentRadar = Instantiate(_circlePrefab, position + Vector3.up * 2.0f, _circlePrefab.transform.rotation);
 				_currentRadar.AddComponent<ParticleCollider>().Scanner = this;
 			}
 		}
@@ -114,7 +114,7 @@ namespace DENT
 					continue;
 				}
 
-				House house = other.transform.parent.GetComponent<House>();
+				House house = other.transform.parent.parent.GetComponent<House>();
 				if (house != null)
 				{
 					house.IsScanned();

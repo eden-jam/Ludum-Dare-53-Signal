@@ -124,9 +124,13 @@ namespace DENT
 			_isKillable = true;
 		}
 
-		public void DisableControl()
+		public void DisableControl(float delay = -1.0f)
 		{
 			_isControllable = false;
+			if (delay > 0.0f)
+			{
+				Invoke("EnableControl", delay);
+			}
 		}
 
 		public void EnableControl()
