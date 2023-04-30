@@ -42,10 +42,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BUILTIN_QueueControl: 0
+    - _BUILTIN_QueueControl: 1
     - _BUILTIN_QueueOffset: 0
     - _Base_Scale: 0.04
-    - _Base_Speed: 75.7
+    - _Base_Speed: 10
     - _Base_Strenght: 0.9
     - _Curvature_radius: 213.2
     - _Emmision_Strenght: 0.08
@@ -57,7 +57,7 @@ Material:
     - _Noise_Edge_2: 2.52
     - _Noise_Height: 12.24
     - _Noise_Power: 62
-    - _Noise_Speed: 193.73
+    - _Noise_Speed: 40
     m_Colors:
     - _Color_Peak: {r: 0.6327484, g: 0.2979708, b: 0.6792453, a: 1}
     - _Color_Valley: {r: 1, g: 0.8254717, b: 0.9546958, a: 1}

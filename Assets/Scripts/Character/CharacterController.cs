@@ -118,6 +118,7 @@ namespace DENT
 			FindObjectOfType<GameManager>().Die();
 			_deathCamera.gameObject.SetActive(false);
 			_Sky.gameObject.SetActive(true);
+			FindObjectOfType<GameManager>().UpdateCamera();
 		}
 
 		public void DisableKill()
