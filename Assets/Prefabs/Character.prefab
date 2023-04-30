@@ -4943,6 +4943,7 @@ GameObject:
   - component: {fileID: 9170970866736556037}
   - component: {fileID: 9170970866736556033}
   - component: {fileID: 3252950944715959378}
+  - component: {fileID: 3383274178184411688}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -5006,6 +5007,7 @@ MonoBehaviour:
   _cooldown: 5
   _directionnalFlag: {fileID: 0}
   _circularFlag: {fileID: 0}
+  _killOnTouch: 1
 --- !u!114 &9170970866736556033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5049,6 +5051,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 11.3
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &3383274178184411688
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170970866736556036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 8
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!1 &9170970867193569895
 GameObject:
   m_ObjectHideFlags: 0

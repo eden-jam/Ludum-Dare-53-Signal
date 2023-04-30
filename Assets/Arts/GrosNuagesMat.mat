@@ -35,7 +35,11 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _SampleTexture2D_a8490c488c0c4652aa983a4a79346da4_Texture_1:
+        m_Texture: {fileID: 8400000, guid: e4838877264273f4790ffc450e1783d3, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BUILTIN_QueueControl: 0
@@ -58,5 +62,7 @@ Material:
     - _Color_Peak: {r: 0.1298027, g: 0, b: 1, a: 0}
     - _Color_Valley: {r: 0.065859735, g: 0.28966272, b: 0.3773585, a: 0}
     - _Noise_Remap: {r: 0, g: 1, b: -0.03, a: 2.7}
+    - _Offset: {r: -2.5, g: -2, b: 0, a: 0}
     - _Rotate_Projection: {r: 1, g: 0, b: 0, a: 90}
+    - _Tilling: {r: 4, g: 4, b: 0, a: 0}
   m_BuildTextureStacks: []
