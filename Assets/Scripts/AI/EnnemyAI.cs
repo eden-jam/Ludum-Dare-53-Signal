@@ -10,6 +10,7 @@ public class EnnemyAI : MonoBehaviour
     int waypointIndex;
     Vector3 target;
     bool followPlayer = false;
+    [SerializeField] ParticleSystem _radarEmitter;
 
     void Start()
     {
@@ -56,5 +57,9 @@ public class EnnemyAI : MonoBehaviour
         position.y = 0;
         UpdateDestination(position);
         followPlayer = true;
+        ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
+        emitParams.position = transform.position;
+        emitParams.position += Vector3.up * 200.0f;
+        _radarEmitter.Emit(emitParams, 1);
     }
 }

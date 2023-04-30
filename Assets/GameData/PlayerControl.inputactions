@@ -146,6 +146,17 @@
                 },
                 {
                     "name": "",
+                    "id": "69a7f038-af55-4988-836d-ab1872d075b6",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a33b9c85-f3eb-47b5-8dac-9c843b8f3b25",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -157,8 +168,30 @@
                 },
                 {
                     "name": "",
+                    "id": "ed33791e-e3bb-404f-83fc-cf63380fefbf",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScanInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "1587e0aa-569e-48f5-abd2-a0e2c9fce5fa",
                     "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwitchRadar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9ea28a43-e3ec-42b9-8a56-3adc3e4508b1",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
