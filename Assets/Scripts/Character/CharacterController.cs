@@ -29,6 +29,8 @@ namespace DENT
 		private bool _isKillable = true;
 		private bool _isControllable = true;
 		[SerializeField] private PlayableDirector _director = null;
+		[SerializeField] private GameObject _deathCamera;
+		[SerializeField] private GameObject _Sky;
 		#endregion Fields
 
 		#region Methods
@@ -101,6 +103,8 @@ namespace DENT
 
 		public void DieAnimation()
 		{
+			_Sky.gameObject.SetActive(false);
+			_deathCamera.gameObject.SetActive(true);
 			_director.Play();
 			_director.stopped += Die;
 			DisableControl();
@@ -112,6 +116,8 @@ namespace DENT
 			_director.Evaluate();
 			EnableControl();
 			FindObjectOfType<GameManager>().Die();
+			_deathCamera.gameObject.SetActive(false);
+			_Sky.gameObject.SetActive(true);
 		}
 
 		public void DisableKill()
