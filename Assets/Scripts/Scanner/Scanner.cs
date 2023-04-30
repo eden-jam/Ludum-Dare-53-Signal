@@ -114,6 +114,20 @@ namespace DENT
 					continue;
 				}
 
+				House house = other.transform.parent.GetComponent<House>();
+				if (house != null)
+				{
+					house.IsScanned();
+					ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
+					emitParams.position = hitPoint;
+					emitParams.position += Vector3.up * 200.0f;
+					emitParams.startColor = Color.yellow;
+					_radarEmitter.Emit(emitParams, 1);
+					//UnityEngine.Debug.Log(hit.point);
+					UnityEngine.Debug.DrawLine(_currentRadar.transform.position, hitPoint, Color.cyan, 5.0f);
+					continue;
+				}
+
 				if (Vector3.Distance(transform.position, hitPoint) < _fogDist)
 				{
 					ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();

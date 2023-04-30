@@ -20,6 +20,10 @@ namespace DENT
 		private void Start()
 		{
 			_remainHouses = _houses;
+			foreach (House house in _remainHouses)
+			{
+				house.SetActive(false);
+			}
 			TargetNewQuest();
 		}
 

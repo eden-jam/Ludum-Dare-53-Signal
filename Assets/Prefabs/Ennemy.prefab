@@ -4885,7 +4885,7 @@ GameObject:
   - component: {fileID: 7388711812656849420}
   - component: {fileID: 7388711812656849425}
   - component: {fileID: 7897000909003584440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ennemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4917,11 +4917,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7388711812656849423}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 7.52, y: 75.53, z: 10.08}
-  m_Center: {x: 0, y: 0, z: 4.59}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7388711812656849420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4989,8 +4989,7 @@ GameObject:
   - component: {fileID: 7388711814046598761}
   - component: {fileID: 7388711814046598764}
   - component: {fileID: 7388711814046598767}
-  - component: {fileID: 7388711814046598766}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ennemy Child
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5063,19 +5062,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7388711814046598766
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7388711814046598760}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2563817686094549164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5084,6 +5070,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 7388711814046598761}
     m_Modifications:
+    - target: {fileID: 100000, guid: 4020b43f8accddb4bb9bd1f3b3fddcf7, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4020b43f8accddb4bb9bd1f3b3fddcf7, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5110,7 +5100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4020b43f8accddb4bb9bd1f3b3fddcf7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.364
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4020b43f8accddb4bb9bd1f3b3fddcf7, type: 3}
       propertyPath: m_LocalRotation.w

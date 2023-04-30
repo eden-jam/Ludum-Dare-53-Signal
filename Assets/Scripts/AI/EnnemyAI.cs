@@ -33,7 +33,7 @@ public class EnnemyAI : MonoBehaviour
                 followPlayer = false;
                 UpdateDestination(waypoints[waypointIndex].position);
             }
-            Debug.Log(target);
+            //Debug.Log(target);
         }
     }
 

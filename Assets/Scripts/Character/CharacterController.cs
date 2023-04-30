@@ -2,6 +2,8 @@ namespace DENT
 {
 	using UnityEngine;
 	using UnityEngine.InputSystem;
+	using UnityEngine.Playables;
+	using UnityEngine.Timeline;
 
 	/// <summary>
 	/// 
@@ -24,6 +26,9 @@ namespace DENT
 		[SerializeField] private GameObject _directionnalFlag = null;
 		[SerializeField] private GameObject _circularFlag = null;
 		[SerializeField] private bool _killOnTouch = true;
+		private bool _isKillable = true;
+		private bool _isControllable = true;
+		[SerializeField] private PlayableDirector _director = null;
 		#endregion Fields
 
 		#region Methods
@@ -36,6 +41,12 @@ namespace DENT
 
 		private void Update()
 		{
+			if (_isControllable == false)
+			{
+				_rigidbody.AddForce(_rigidbody.velocity * 0.5f * -1.0f);
+				return;
+			}
+
 			_cooldownTimer -= Time.deltaTime;
 			Vector2 vector = _movementInput.action.ReadValue<Vector2>();
 			if (vector != Vector2.zero)
@@ -74,15 +85,53 @@ namespace DENT
 
 		private void OnTriggerEnter(Collider other)
 		{
-			if (other.CompareTag("Enemy"))
+			if (_isKillable)
 			{
-				FindObjectOfType<GameManager>().Die();
-			}
+				if (other.CompareTag("Enemy"))
+				{
+					DieAnimation();
+				}
 
-			if (other.CompareTag("Terrain") && _killOnTouch)
-			{
-				FindObjectOfType<GameManager>().Die();
+				if (other.CompareTag("Terrain") && _killOnTouch)
+				{
+					DieAnimation();
+				}
 			}
+		}
+
+		public void DieAnimation()
+		{
+			_director.Play();
+			_director.stopped += Die;
+			DisableControl();
+		}
+
+		public void Die(PlayableDirector director)
+		{
+			_director.time = 0.0f;
+			_director.Evaluate();
+			EnableControl();
+			FindObjectOfType<GameManager>().Die();
+		}
+
+		public void DisableKill()
+		{
+			_isKillable = false;
+		}
+
+		public void EnableKill()
+		{
+			_isKillable = true;
+		}
+
+		public void DisableControl()
+		{
+			_isControllable = false;
+		}
+
+		public void EnableControl()
+		{
+			_isControllable = true;
 		}
 		#endregion Methods
 	}
